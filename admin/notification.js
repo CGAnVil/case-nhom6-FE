@@ -1,3 +1,4 @@
+// hien thong bao
 function showSuccessMessage(message) {
     $(function () {
         var Toast = Swal.mixin({
