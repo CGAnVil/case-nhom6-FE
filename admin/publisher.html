@@ -190,20 +190,24 @@
                     <img alt="User Image" class="img-circle elevation-2" src="dist/img/user2-160x160.jpg">
                 </div>
                 <div class="info">
-                    <a class="d-block" href="#">Alexander Pierce</a>
+                    <a class="d-block" href="#" id="name_admin">Admin</a>
                 </div>
             </div>
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img alt="User Image" class="img-circle elevation-2" src="dist/img/user2-160x160.jpg">
-        </div>
-        <div class="info">
-          <a class="d-block" href="#" id="name_admin">Alexander Pierce</a>
-        </div>
-      </div>
+
+            <!-- SidebarSearch Form -->
+            <div class="form-inline">
+                <div class="input-group" data-widget="sidebar-search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                           aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-2">
 
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
@@ -234,14 +238,18 @@
                                     <p>Quản lý thể loại</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="./author.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Quản lý tác giả</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </nav>
-                <!-- /.sidebar-menu -->
         </div>
-        <!-- /.sidebar -->
-    </aside>
+    </aside>   <!-- /.sidebar-menu -->
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -293,6 +301,7 @@
                             <div id="displayPage"></div>
                             <!-- /.card-body -->
                         </div>
+
                         <!-- /.card -->
 
                     </div>
@@ -300,38 +309,15 @@
                 </div>
                 <!-- /.row -->
             </div>
-            <!-- /.card -->
 
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <div class="modal fade" id="create-publisher">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="create-publisher-title">Tạo mới nhà xuất bản</h4>
-          <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="name">Tên nhà xuất bản</label>
-            <input class="form-control" id="name" placeholder="Nhập tên nhà xuất bản" type="text">
-          </div>
-        </div>
-        <div class="modal-footer justify-content-between" id="create-publisher-footer">
-          <button class="btn btn-secondary" data-dismiss="modal" type="button">Đóng</button>
-          <button class="btn btn-primary" onclick="createNewPublisher()" type="button">Thêm nhà sản xuất</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
+
+            <!-- /.col -->
+
+            <!-- /.row -->
+
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
     <div class="modal fade" id="create-publisher">
         <div class="modal-dialog">
@@ -350,75 +336,76 @@
                 </div>
                 <div class="modal-footer justify-content-between" id="create-publisher-footer">
                     <button class="btn btn-secondary" data-dismiss="modal" type="button">Đóng</button>
-                    <button class="btn btn-primary" onclick="createNewPublisher()" type="button">Tạo mới</button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <div class="modal fade" id="delete-publisher">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Xóa nhà xuất bản</h4>
-                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                        <span aria-hidden="true">&times;</span>
+                    <button class="btn btn-primary" onclick="createNewPublisher()" type="button">Thêm nhà sản xuất
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p>Bạn có muốn xóa không?</p>
-                </div>
-                <div class="modal-footer justify-content-between" id="footer-delete">
-                </div>
             </div>
             <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
 
-    <!-- Main content -->
+        <div class="modal fade" id="delete-publisher">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Xóa nhà xuất bản</h4>
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bạn có muốn xóa không?</p>
+                    </div>
+                    <div class="modal-footer justify-content-between" id="footer-delete">
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <!-- Main content -->
+    </div>
+    <script crossorigin="anonymous"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="plugins/toastr/toastr.min.js"></script>
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <script src="publisher.js"></script>
 </div>
-<script crossorigin="anonymous"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="plugins/toastr/toastr.min.js"></script>
-<script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<script src="publisher.js"></script>
 </body>
 </html>
