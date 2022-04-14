@@ -12,7 +12,7 @@ function getAuthorByPage(page) {
             for (let i = 0; i < authors.length; i++) {
                 content += `<tr>
                     <td>${i + 1}</td>
-                    <td><a href="${authors[i].wiki}">${authors[i].name}</a></td>
+                    <td><a href="${authors[i].wiki}" target="_blank">${authors[i].name}</a></td>
                     <td>${authors[i].dateBirth}</td>
                     <td>${authors[i].dateDeath}</td>
                     <td>${authors[i].quantityBook}</td>
@@ -114,8 +114,8 @@ function deleteAuthor(id){
 
 // show edit
 function showEditAuthor(id){
-    let title = "Chỉnh sửa thông tin sản Phẩm";
-    let footer = `<button class="btn btn-secondary" data-dismiss="modal" type="button">Đóng</button>
+    let title = "Chỉnh sửa thông tin Tác Giả";
+    let footer = `<button class="btn btn-secondary" data-dismis="modal" type="button">Đóng</button>
                     <button class="btn btn-danger" onclick="EditAuthor(${id})" type="button" aria-label="Close" class="close" data-dismiss="modal">Cập nhật</button>`
 
     $('#create-author-title').html(title);
@@ -125,7 +125,7 @@ function showEditAuthor(id){
         type : "GET",
         url : `http://localhost:8080/authors/${id}`,
         success : function (author){
-            let imageEdit = `<img src="http://localhost:8080/${author.image}" height="100" width="100">`
+            let imageEdit = `<img src="http://localhost:8080/image/${author.image}" height="100" width="100">`
             $('#image-edit').html(imageEdit);
             $(`#name`).val(author.name);
             $(`#dateBirth`).val(author.dateBirth);
@@ -172,7 +172,7 @@ function EditAuthor(id){
     })
 
 }
-getAuthorByPage();
+
 
 $(document).ready(function (){
     getAuthorByPage(0);
