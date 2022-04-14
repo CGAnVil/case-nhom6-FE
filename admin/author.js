@@ -12,7 +12,9 @@ function getAuthorByPage(page) {
             for (let i = 0; i < authors.length; i++) {
                 content += `<tr>
                     <td>${i + 1}</td>
+
                     <td><a href="${authors[i].wiki}" target="_blank">${authors[i].name}</a></td>
+
                     <td>${authors[i].dateBirth}</td>
                     <td>${authors[i].dateDeath}</td>
                     <td>${authors[i].quantityBook}</td>
