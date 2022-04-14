@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
-
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -27,9 +25,6 @@
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-
-
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -65,8 +60,7 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                   aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -171,8 +165,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
-                   role="button">
+                <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
                     <i class="fas fa-th-large"></i>
                 </a>
             </li>
@@ -184,10 +177,10 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
-            <span class="brand-text font-weight-light">Quản lý</span>
+            <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Quản lý trang web</span>
         </a>
+
 
         <!-- Sidebar -->
         <div class="sidebar">
@@ -197,16 +190,14 @@
                     <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-
-                    <a href="#" class="d-block" id="name_admin">Admin</a>
+                    <a href="#" class="d-block">Admin</a>
                 </div>
             </div>
 
             <!-- SidebarSearch Form -->
             <div class="form-inline">
                 <div class="input-group" data-widget="sidebar-search">
-                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                           aria-label="Search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-sidebar">
                             <i class="fas fa-search fa-fw"></i>
@@ -217,19 +208,14 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-
-                                Quản lý của hảng
-
+                                Dashboard
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -247,16 +233,21 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index3.html" class="nav-link">
+                                <a href="./index.html" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
+                                    <p>Dashboard v1</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./author.html" class="nav-link">
+                                <a href="./category-manage.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Quản Lý Tác Giả</p>
-
+                                    <p>Quản lý thể loại</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/case-nhom6-FE/admin/publisher.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Quản lý nhà xuất bản</p>
                                 </a>
                             </li>
                         </ul>
@@ -277,79 +268,86 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Danh Sách Tác Giả</h1>
+                        <h1 class="m-0">Quản Lý Sách</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Quản Lý Tác Giả</li>
+                            <li class="breadcrumb-item active">Quản Lý Sách</li>
                         </ol>
                     </div><!-- /.col -->
-                    <button class="btn btn-primary col-1" data-target="#create-author" data-toggle="modal"
-                            type="button" onclick="showCreateAuthor()">
+                    <button class="btn btn-primary col-1" data-target="#create-book" data-toggle="modal"
+                            type="button" onclick="showCreateBook()">
                         Tạo mới
                     </button>
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
+
         <!-- Main content -->
         <section class="content">
             <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">STT</th>
-                    <th scope="col">name</th>
-                    <th scope="col">DateBirth</th>
-                    <th scope="col">DateDeath</th>
-                    <th scope="col">QuantityBook</th>
-                    <th scope="col">nationality</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">ReleaseYear</th>
+                    <th scope="col">Republish</th>
+                    <th colspan="col">Publisher</th>
+                    <th colspan="col">Image</th>
                     <th colspan="2">Action</th>
                 </tr>
                 </thead>
-                <tbody id="author-list-content">
+                <tbody id="book-list-content">
                 </tbody>
-                <div id="author-page">
+                <div id="book-page">
                 </div>
             </table>
         </section>
         <!-- /.content -->
 
     </div>
-    <div class="modal fade" id="create-author">
+    <div class="modal fade" id="create-book">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="create-author-title">Thêm Tác Giả</h4>
+                    <h4 class="modal-title" id="create-book-title">Thêm Tác Giả</h4>
                     <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="name">Tên Tác Giả</label>
-                        <input class="form-control" id="name" placeholder="Nhập Tên Tác Giả" type="text">
+                        <label for="name">Tên Sách</label>
+                        <input class="form-control" id="name" placeholder="Nhập Tên Sách" type="text">
                     </div>
                     <div class="form-group">
-                        <label for="dateBirth">Năm Sinh</label>
-                        <input class="form-control" id="dateBirth" placeholder="Năm Sinh" type="text">
+                        <label for="price">Giá Sách</label>
+                        <input class="form-control" id="price" placeholder="Giá Sách" type="text">
                     </div>
                     <div class="form-group">
-                        <label for="dateDeath">Năm Mất</label>
-                        <input class="form-control" id="dateDeath" placeholder="Năm Mất" type="text">
+                        <label for="genre">Thể Loại</label>
+                        <select class="form-control" id="genre"></select>
                     </div>
                     <div class="form-group">
-                        <label for="quantityBook">Số Lượng Sách</label>
-                        <input class="form-control" id="quantityBook" placeholder="Số Lượng Sách" type="text">
+                        <label for="author">Tác Giả</label>
+                        <select class="form-control" id="author"></select>
                     </div>
                     <div class="form-group">
-                        <label for="nationality">Quốc Tịch</label>
-                        <input class="form-control" id="nationality" placeholder="Quốc Tịch" type="text">
+                        <label for="releaseYear">Năm Phát Hành</label>
+                        <input class="form-control" id="releaseYear" placeholder="Năm Phát Hành" type="text">
                     </div>
                     <div class="form-group">
-                        <label for="wiki">Link Wiki</label>
-                        <input class="form-control" id="wiki" placeholder="Link Wiki" type="text">
+                        <label for="republish">Năm Tái Bản</label>
+                        <input class="form-control" id="republish" placeholder="Năm Tái Bản" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="publisher">Nhà Xuất Bản</label>
+                        <select class="form-control" id="publisher"></select>
                     </div>
                     <div id="image-edit">
 
@@ -359,7 +357,7 @@
                         <input class="form-control" id="image" type="file">
                     </div>
                 </div>
-                <div class="modal-footer justify-content-between" id="create-author-footer">
+                <div class="modal-footer justify-content-between" id="create-book-footer">
 
                 </div>
             </div>
@@ -368,7 +366,7 @@
         <!-- /.modal-dialog -->
     </div>
 
-    <div class="modal fade" id="delete-author">
+    <div class="modal fade" id="delete-book">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -388,8 +386,16 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-
+    </div>
     <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 3.2.0
+        </div>
+    </footer>
+
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
@@ -433,7 +439,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
 <script src="../notification.js"></script>
-<script src="author.js"></script>
-</div>
+<script src="book.js"></script>
+
 </body>
 </html>
