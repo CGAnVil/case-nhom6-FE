@@ -17,15 +17,60 @@ function getAllBookByGenre(genreId,uplink) {
             let books = data;
             for (let i = 0; i < books.length; i++) {
 
-                content += `<div class="book-content" >
-                <img src="http://localhost:8080/image/${books[i].image}" width="250" height="350">
-                <p>${books[i].name}</p>
-                <p><a href="${books[i].author.wiki}" target="_blank">${books[i].author.name}</a></p>
-                <p>${books[i].price}</p>
-                <button>thêm vào giỏ hàng</button>
-                            </div>`
+                content += `<li>
+\t\t\t\t\t\t<div class="product">
+\t\t\t\t\t\t\t<a href="#" class="info">
+\t\t\t\t\t\t\t\t<span class="holder">
+\t\t\t\t\t\t\t\t\t<img src="http://localhost:8080/image/${books[i].image}" alt="" />
+\t\t\t\t\t\t\t\t\t<span class="book-name">${books[i].name}</span>
+\t\t\t\t\t\t\t\t\t<span class="author">by ${books[i].author.name}</span>
+\t\t\t\t\t\t\t\t\t<span class="genre">${books[i].genre.name}</span>
+\t\t\t\t\t\t\t\t\t<span class="price">${books[i].price}</span>
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</li>`
             }
             $(`#${uplink}`).html(content);
+        }
+    })
+    event.preventDefault();
+}
+
+function getBookByPage(page) {
+    $.ajax({
+        type: "GET",
+        url: `http://localhost:8080/books?page=${page}`,
+        success: function (data) {
+            let content = "";
+            let books = data.content;
+            for (let i = 0; i < books.length; i++) {
+                content += `<li>
+						<div class="product">
+							<a href="#">
+								<img src="http://localhost:8080/image/${books[i].image}" alt="" />
+\t\t\t\t\t\t\t\t\t<span class="book-name">${books[i].name}</span>
+\t\t\t\t\t\t\t\t\t<span class="author">by ${books[i].author.name}</span>
+\t\t\t\t\t\t\t\t\t<span class="genre">${books[i].genre.name}</span>
+\t\t\t\t\t\t\t\t\t<span class="price">${books[i].price}</span>
+							</a>
+						</div>
+					</li>`
+            }
+            $('#all-book').html(content);
+
+            let page = `<button class="btn btn-primary" id="backup" onclick="getBookByPage(${data.pageable.pageNumber}-1)">Previous</button>
+            <span>${data.pageable.pageNumber + 1} | ${data.totalPages}</span>
+            <button class="btn btn-primary" id="next" onclick="getBookByPage(${data.pageable.pageNumber}+1)">Next</button>`
+            $('#book-page').html(page);
+            if (data.pageable.pageNumber === 0) {
+                document.getElementById("backup").hidden = true
+            }
+            if (data.pageable.pageNumber + 1 === data.totalPages) {
+                document.getElementById("next").hidden = true
+            }
+
         }
     })
     event.preventDefault();
@@ -65,6 +110,11 @@ $(document).ready(function () {
 $(document).ready(function () {
     getAllPoem();
 })
+
+$(document).ready(function () {
+    getBookByPage();
+})
+
 
 
 
