@@ -44,6 +44,10 @@ function getAllHistoric(){
     getAllBookByGenre(3,'historic-list-content');
 }
 
+function getAllPoem(){
+    getAllBookByGenre(4,'poem-list-content')
+}
+
 
 
 
@@ -56,6 +60,10 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     getAllHistoric();
+})
+
+$(document).ready(function () {
+    getAllPoem();
 })
 
 
