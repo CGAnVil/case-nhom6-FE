@@ -39,6 +39,51 @@ function getAuthorByPage(page) {
     })
     event.preventDefault();
 }
+
+function findAuthorByName(page){
+    let q = $('#q').val()
+    $.ajax({
+        type : "GET",
+        url : `http://localhost:8080/authors?q=${q}&page=${page}`,
+        success: function (data) {
+            let content = "";
+            let authors = data.content;
+            for (let i = 0; i < authors.length; i++) {
+                content += `<tr>
+                    <td>${i + 1}</td>
+                    <td><a href="${authors[i].wiki}" target="_blank">${authors[i].name}</a></td>
+                    <td>${authors[i].dateBirth}</td>
+                    <td>${authors[i].dateDeath}</td>
+                    <td>${authors[i].quantityBook}</td>
+                    <td>${authors[i].nationality}</td>
+                    <td><img src="http://localhost:8080/image/${authors[i].image}" width="100" height="100"></td> 
+                   <td><button class="btn btn-primary"><i class="fa fa-edit" data-target="#create-author" data-toggle="modal"                                        
+            type="button" onclick="showEditAuthor(${authors[i].id})"></i></button></td>
+            <td><button class="btn btn-danger" data-target="#delete-author" data-toggle="modal"
+                                        type="button" onclick="showDeleteAuthor(${authors[i].id})"><i class="fa fa-trash"></i></button></td>
+                </tr>`
+            }
+            $('#author-list-content').html(content);
+            let page = `<button class="btn btn-primary" id="backup" onclick="getAuthorByPage(${data.pageable.pageNumber}-1)">Previous</button>
+            <span>${data.pageable.pageNumber + 1} | ${data.totalPages}</span>
+            <button class="btn btn-primary" id="next" onclick="getAuthorByPage(${data.pageable.pageNumber}+1)">Next</button>`
+            $('#author-page').html(page);
+            if (data.pageable.pageNumber === 0) {
+                document.getElementById("backup").hidden = true
+            }
+            if (data.pageable.pageNumber + 1 === data.totalPages) {
+                document.getElementById("next").hidden = true
+            }
+        }
+    })
+    event.preventDefault();
+}
+
+
+
+
+
+
 // tạo mới
 function createNewAuthor(){
     let name = $('#name').val();
@@ -103,7 +148,7 @@ function deleteAuthor(id){
         url :`http://localhost:8080/authors/${id}`,
         success: function (){
             getAuthorByPage();
-            showSuccessMessage("xoa t/hanh cong")
+            showSuccessMessage("xoa thanh cong")
         },
         error: function (){
             showErrorMessage("xoa that bai");
