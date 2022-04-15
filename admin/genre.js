@@ -52,7 +52,7 @@ function deleteGenre(id) {
         type: 'DELETE',
         url: `http://localhost:8080/genres/${id}`,
         headers: {
-            'Authorization': 'Bearer ' + currentUser.token
+            'Authorization': 'Bearer ' + currentUser?.token
         },
         success: function () {
             getAllGenre();
@@ -81,7 +81,7 @@ function showEditGenre(id) {
         type: 'GET',
         url: `http://localhost:8080/genres/${id}`,
         headers: {
-            'Authorization': 'Bearer ' + currentUser.token
+            'Authorization': 'Bearer ' + currentUser?.token
         },
         success: function (genre) {
             $('#name').val(genre.name);

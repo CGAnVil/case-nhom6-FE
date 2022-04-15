@@ -35264,7 +35264,7 @@ body.iframe-mode-fullscreen.layout-navbar-fixed .wrapper .content-wrapper {
 }
 
 .content-wrapper {
-  height: 100%;
+  height: 50%;
 }
 
 .content-wrapper.iframe-mode .btn-iframe-close {

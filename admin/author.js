@@ -125,7 +125,7 @@ function createNewAuthor(){
 function showCreateAuthor(){
     let title = "Thêm Thông Tin Tác Giả";
     let footer = `<button class="btn btn-secondary" data-dismiss="modal" type="button">Đóng</button>
-                  <button class="btn btn-primary" onclick="createNewAuthor()" type="button">Tạo mới</button>`
+                  <button class="btn btn-primary" data-dismiss="modal" onclick="createNewAuthor()" type="button">Tạo mới</button>`
     $(`#create-author-footer`).html(footer);
     $(`#create-author-title`).html(title);
     $(`#name`).val(null);
@@ -200,6 +200,9 @@ function EditAuthor(id){
     author.append('quantityBook', quantityBook);
     author.append('nationality',nationality)
     author.append('wiki',wiki);
+    if(image == null){
+        author.append('image')
+    }
     author.append('image', image.prop('files')[0])
     $.ajax({
         type:'POST',

@@ -1,0 +1,11 @@
+.book-content{
+    margin-left: 10px;;
+    width: 400px;
+    height: 400px;
+    float: left;
+}
+
+.content-main{
+    margin-top: 10px;
+    height: 300px;
+}
