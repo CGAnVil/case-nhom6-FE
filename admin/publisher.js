@@ -13,7 +13,7 @@ function getAllPublisher() {
         url: `http://localhost:8080/publishes`,
         type: 'GET',
         headers: {
-            'Authorization': 'Bearer ' + currentUser.token
+            'Authorization': 'Bearer ' + currentUser?.token
         },
         success: function (publishes) {
             let content = '';
@@ -60,7 +60,7 @@ function deletePublisher(id) {
         type: 'DELETE',
         url: `http://localhost:8080/publishes/${id}`,
         headers: {
-            'Authorization': 'Bearer ' + currentUser.token
+            'Authorization': 'Bearer ' + currentUser?.token
         },
         success: function () {
             getAllPublisher();
@@ -89,7 +89,7 @@ function showEditPublisher(id) {
         type: 'GET',
         url: `http://localhost:8080/publishes/${id}`,
         headers: {
-            'Authorization': 'Bearer ' + currentUser.token
+            'Authorization': 'Bearer ' + currentUser?.token
         },
         success: function (publisher) {
             $('#name').val(publisher.name);
@@ -120,5 +120,8 @@ function editPublisher(id) {
         }
     })
 }
-getAllPublisher();
+
+$(document).ready(function () {
+    getAllPublisher();
+})
 
