@@ -2,7 +2,7 @@ let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);// ep chuoi ve doi tuong
 function showNameUser(){
     let name = ` <a class="d-block" href="#">${currentUser.username}</a>`
-    $(`#name_admin`).html(name)
+    $(`#name_user`).html(name)
 }
 $(document).ready(function (){
     showNameUser();
@@ -126,3 +126,8 @@ $(document).ready(function () {
         location.href = '/case-nhom6-FE/admin/homepage.html'
     }
 })
+
+function doLogout() {
+    localStorage.removeItem('currentUser');
+    location.href = "/case-nhom6-FE/homepage-2/home.html";
+}

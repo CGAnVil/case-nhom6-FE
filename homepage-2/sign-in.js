@@ -15,7 +15,7 @@ function login() {
         },
         success: function (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            location.href = '../admin/homepage.html'
+            location.href = '/case-nhom6-FE/homepage-2/home.html'
         }
     });
 }
