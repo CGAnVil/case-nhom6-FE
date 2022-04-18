@@ -15,9 +15,22 @@ function login() {
         },
         success: function (currentUser) {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            location.href = '/case-nhom6-FE/homepage-2/home.html'
+            if (isAdmin(currentUser.roles) === true) {
+                location.href = "/case-nhom6-FE/homepage-2/adminHome.html"
+            } else if (currentUser.roles[0].authority === "ROLE_USER") {
+                location.href = "/case-nhom6-FE/homepage-2/home.html"
+            }
         }
     });
+}
+
+function isAdmin(roles){
+    let isAdmin = false;
+    for (let i = 0; i < roles.length; i++) {
+        if(roles[i].authority === "ROLE_ADMIN"){
+            return isAdmin = true;
+        }
+    }
 }
 
 function register() {
@@ -40,7 +53,7 @@ function register() {
             'Content-Type': 'application/json'
         },
         success: function () {
-            location.href = 'sign-in.html';
+            location.href = '/case-nhom6-FE/homepage-2/sign-in.html';
         },
         error: function () {
             showErrorMessage('Xảy ra lỗi!')
